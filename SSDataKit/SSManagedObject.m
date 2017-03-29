@@ -254,7 +254,10 @@ static NSString *const kURIRepresentationKey = @"URIRepresentation";
 	if (!context) {
 		context = [self mainQueueContext];
 	}
-
+    
+    if (!context)
+        return nil;
+    
 	return [NSEntityDescription entityForName:[self entityName] inManagedObjectContext:context];
 }
 
